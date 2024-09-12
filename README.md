@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+Это программа, которая наугад вытаскивает 5 фишек с номерами от 5 до 36 и выводит их в порядке возрастания. Ну типа как лотерея.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Занятие 51. Домашнее задание
 
-## Expanding the ESLint configuration
+Задание 1
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Создайте приложение-аналог розыгрыша номеров из лотереи "5 из 36". 
+Изначально в приложении должны отображаться именно эти числа, которые указаны на скриншоте: 5, 11, 16, 23, 32
+При нажатии на кнопку "New numbers" создается новый набор из пяти случайных чисел от 5 до 36. Числа не должны повторяться. Должны идти по возрастанию от меньшего к большему.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Указания:
+- Воспользуйтесь vite, чтобы создать проект с шаблоном react-swc-ts.
+- Для отображения одного "шарика" с числом используйте компонент. Компонент создайте в отдельном файле.
+- Дизайн произвольный.
+- Зафиксируйте каждый этап разработки приложения с помощью Git, например:
+  * Создали приложение через create-react-app
+  * Создали компонент
+  * и т.п.
+  У вас должно быть минимум три коммита.
+- Сдавать через Bitbucket/Github
