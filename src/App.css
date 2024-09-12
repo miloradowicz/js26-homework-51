@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+
+.chips-tray {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  padding: 1rem;
+}

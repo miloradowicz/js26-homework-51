@@ -28,6 +28,7 @@ function App() {
 
   return (
     <>
+      <h1>Super duper lottery!</h1>
       <button className='draw-chips-btn' onClick={drawChips}>
         New numbers
       </button>
