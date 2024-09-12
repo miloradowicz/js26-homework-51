@@ -1,0 +1,9 @@
+.chip {
+  border-radius: 50%;
+  border: 2px solid #646cff;
+  width: 4ch;
+  height: 4ch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
