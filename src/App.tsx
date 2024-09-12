@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { randomInt } from './utils/utils';
+import Chip from './Chip/Chip';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const chipCount = 5;
+  const minChip = 5;
+  const maxChip = 36;
+
+  const [numbers, setNumbers] = useState([5, 11, 16, 23, 32]);
+
+  const drawChips = () => {
+    let _numbers: number[] = [];
+
+    while (_numbers.length < chipCount) {
+      const n = randomInt(maxChip, minChip);
+
+      if (!_numbers.includes(n)) {
+        _numbers.push(n);
+      }
+    }
+
+    _numbers = _numbers.sort((a, b) => a - b);
+
+    setNumbers(() => _numbers);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <button className='draw-chips-btn' onClick={drawChips}>
+        New numbers
+      </button>
+      <div className='chips-tray'>
+        {numbers.map((x) => (
+          <Chip>{x}</Chip>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
